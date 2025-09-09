@@ -130,8 +130,8 @@
   padding: 0px;
   align-items: center;
   outline: none;
-  transition: border 0.3s ease;
-	cursor: pointer;
+  /*transition: border 0.3s ease;*/
+	/*cursor: pointer;*/
 }
 
 .card__icon-button:focus {
@@ -291,16 +291,14 @@
 .floppy {
   display: block;
   position: relative;
-  max-width: 28px;
-	max-height: 28px;
+  max-width: 39px;
+	max-height: 39px;
   justify-self: center;
   mix-blend-mode: difference;
   z-index: 2;
   color:#FFF;
   /*fill: currentColor;*/
   object-fit: cover;
-  max-width: 39px;
-	max-height: 39px;
 }
 
 .dialog[open] {
