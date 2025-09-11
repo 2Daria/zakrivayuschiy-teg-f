@@ -16,40 +16,40 @@
   max-inline-size: 700px;
   display: grid;
   font-family: var(--main-font), sans-serif;
-	font-variation-settings: 'wght' var(--text-font-weight);
-	margin: 0 auto;
-	background-image: var(--background-image);
+  font-variation-settings: "wght" var(--text-font-weight);
+  margin: 0 auto;
+  background-image: var(--background-image);
   background-size: 20px 20px, 20px 20px, cover;
-	background-repeat: repeat;
-	background-attachment: fixed;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .header {
-	margin: 100px auto;
-	width: 100%;
-	min-block-size: 327px;
-	display: flex;
-	gap: 20px;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--background-color);
-	border: var(--border);
+  margin: 100px auto;
+  width: 100%;
+  /*min-block-size: 327px;*/
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  border: var(--border);
   padding-block: 120px;
 }
 
 .header__logo {
-  font-family: 'PressStart2P', sans-serif;
-	text-align: center;
-	font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
+  font-family: "PressStart2P", sans-serif;
+  text-align: center;
+  font-size: clamp(3.0625rem, 1.9087rem + 4.9231vw, 4.0625rem);
   text-transform: uppercase;
 }
 
 .header__title {
-  font-family: 'PressStart2P', sans-serif;
-	text-align: center;
+  font-family: "PressStart2P", sans-serif;
+  text-align: center;
   font-size: clamp(0.875rem, 0.226rem + 2.7692vw, 1.4375rem);
-	text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .main {
@@ -67,9 +67,9 @@
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--title-font-weight);
+  font-variation-settings: "wght" var(--title-font-weight);
   font-size: inherit;
-  padding: 4px 10px;
+  padding: 5px 10px;
   border-bottom: var(--border);
 }
 
@@ -102,7 +102,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  font-variation-settings: 'wght' var(--text-font-weight);
+  font-variation-settings: "wght" var(--text-font-weight);
   border-top: var(--border);
   gap: 25px;
   padding: 25px;
@@ -121,6 +121,7 @@
 }
 
 .card__icon-button {
+  display: flex;
   background-color: transparent;
   border: 2px solid transparent;
   cursor: pointer;
@@ -129,9 +130,8 @@
   block-size: 38px;
   padding: 0px;
   align-items: center;
+  justify-content: center;
   outline: none;
-  /*transition: border 0.3s ease;*/
-	/*cursor: pointer;*/
 }
 
 .card__icon-button:focus {
@@ -148,7 +148,7 @@
   inline-size: 39px;
   block-size: 36px;
   flex-shrink: 0;
-  transform-origin: center
+  transform-origin: center;
 }
 
 .contour {
@@ -280,8 +280,8 @@
 }
 
 .save_button {
-  inline-size: 306px;
-  block-size: 84px;
+  min-inline-size: 306px;
+  max-block-size: 84px;
   /*margin-block: 50px 100px;*/
   gap: 8px;
   padding-block: 14px;
@@ -291,26 +291,40 @@
 .floppy {
   display: block;
   position: relative;
+  max-width: 21px;
+  max-height: 21px;
+  /*min-width: 21px;
+  min-height: 21px;*/
+  justify-self: center;
+  mix-blend-mode: difference;
+  z-index: 2;
+  color: #fff;
+  /*fill: currentColor;*/
+  object-fit: cover;
+}
+
+.dialog_floppy {
+  display: block;
+  position: relative;
   max-width: 39px;
 	max-height: 39px;
   justify-self: center;
   mix-blend-mode: difference;
   z-index: 2;
-  color:#FFF;
-  /*fill: currentColor;*/
+  color: #fff;
   object-fit: cover;
 }
 
 .dialog[open] {
   display: grid;
   position: fixed;
-	border: var(--border);
-	gap: 30px;
-	padding-inline: 40px;
-	padding-block: 30px;
-	inline-size: 341px;
-	inset: 0;
-	transition: 0.3s ease-in-out;
+  border: var(--border);
+  gap: 30px;
+  padding-inline: 40px;
+  padding-block: 30px;
+  inline-size: 341px;
+  inset: 0;
+  transition: 0.3s ease-in-out;
 }
 
 .dialog::backdrop {
@@ -319,9 +333,9 @@
 
 .dialog_save {
   display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 18px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
 }
 
 .dialog_save_text {
@@ -335,7 +349,7 @@
   padding: 9px 17px;
 }
 
-.dialog_save_text , 
+.dialog_save_text,
 .dialog_button {
   text-transform: uppercase;
 }
@@ -363,20 +377,20 @@
 }
 
 .multiply-filter {
-	filter: invert(90%) sepia(60%) hue-rotate(1turn) ;
+  filter: invert(90%) sepia(60%) hue-rotate(1turn);
 }
 
 .blur-filter {
-	filter: blur(6px);
+  filter: blur(6px);
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
   .card__label {
     -webkit-text-stroke: 1px #fff;
     text-stroke: 1px #fff;
     text-shadow: none;
   }
-} 
+}
 
 @media (min-width: 1440px) {
   .header {
@@ -392,7 +406,7 @@
   }
 
   #dialog_id[open] {
-    inline-size: 351px;
+    /*inline-size: 351px;*/
     min-inline-size: 351px;
     padding: 28px;
   }
