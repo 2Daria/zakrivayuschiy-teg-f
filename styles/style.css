@@ -22,6 +22,7 @@
   background-size: 20px 20px, 20px 20px, cover;
   background-repeat: repeat;
   background-attachment: fixed;
+  font-size: 18px;
 }
 
 .header {
@@ -61,14 +62,15 @@
 }
 
 .card {
+  position: relative;
   background-color: var(--background-color);
   border: var(--border);
-  inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
+  /*inline-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);*/
 }
 
 .card__title {
   font-variation-settings: "wght" var(--title-font-weight);
-  font-size: inherit;
+  font-size: 18px;
   padding: 5px 10px;
   border-bottom: var(--border);
 }
@@ -79,7 +81,8 @@
 
 .card__image {
   display: block;
-  max-block-size: clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem);
+  /*max-block-size: clamp(23.188rem, 30.516vw + 16.035rem, 43.5rem);*/
+  height: clamp(371px, calc(256.563px + 30.516vw), 696px);
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
