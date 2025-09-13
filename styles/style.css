@@ -419,6 +419,7 @@
 @media (width <= 375px) {
   .floppy {
     width: 28px;
+    height: 28px;
   }
 
   .save_button {
