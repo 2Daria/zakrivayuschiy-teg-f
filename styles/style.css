@@ -309,8 +309,8 @@
 .dialog_floppy {
   display: block;
   position: relative;
-  width: 39px;
-  height: 39px;
+  max-width: 39px;
+  /*height: 39px;*/
   justify-self: center;
   mix-blend-mode: difference;
   z-index: 2;
@@ -417,6 +417,9 @@
 }
 
 @media (width <= 375px) {
+  .floppy {
+    width: 28px;
+  }
 
   .save_button {
     display: flex;
@@ -426,5 +429,9 @@
     gap: 8px;
     block-size: 84px;
     inline-size: 306px;
+  }
+
+  .dialog_save_text {
+    width: 250px;
   }
 }
